@@ -9,15 +9,14 @@ const port = 3000;
 
 
 let names = []; // Array to store names
-greeting = `<h1>Hello ????</h1>`;
+
 app.get('/', (req, res) => {
-    let greeting = '';
-    if (names.length > 0) {
-      //
-      // Code here to create greeting using names array  greeting = ????;
-      //
-      greeting = `<h1>Hello ????</h1>`;
-    }
+  let greeting = `<h1>Hello ????</h1>`;
+  if (names.length > 0) {
+    //
+    // Code here to create greeting using names array  greeting = ????;
+    //
+  }
     res.send(`
       <!DOCTYPE html>
       <html>
@@ -29,6 +28,7 @@ app.get('/', (req, res) => {
           //
           // Code here to create form with text input and submit to /submit-name
           //
+      </body>
       </html>
     `);
   });
