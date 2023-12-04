@@ -59,6 +59,28 @@ app.get('/names', (req, res) => {
       </html>
     `);
   });
+
+  // New route to list all names - Notice use of template literals ` ` to create string
+app.get('/names', (req, res) => {
+  let namesList = '<ul>';
+  for (let name of names) {
+    namesList += `<li>${name}</li>`;
+  }
+  namesList += '</ul>';
+  res.send(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Name List</title>
+    </head>
+    <body>
+        <h1>All Names</h1>
+        ${namesList}
+        <p><a href="/">Back</a></p>
+    </body>
+    </html>
+  `);
+});
   
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
